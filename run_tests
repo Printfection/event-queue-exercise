@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+
+expected_output="Sending receipt to bob@example.com for order #1...
+Sending receipt to sally@example.com for order #2...
+Sending receipt to paul@example.com for order #3..."
+
+# Run the application to queue the events.
+php application.php
+
+# Invoke the server to process the events and capture the output.
+actual_output=$(php server.php)
+
+if [ "$actual_output" == "$expected_output" ]; then
+  echo "SUCCESS!"
+else
+  echo "FAIL: actual output does not match expected output"
+  echo
+  echo "Expected Output:"
+  echo "$expected_output"
+  echo
+  echo "Actual Output:"
+  echo "$actual_output"
+  echo
+fi
+
