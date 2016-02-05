@@ -11,7 +11,7 @@ The client and the server should work asynchronously, in two separate processes,
 # Requirements
 - Use PHP to write both the client and the server.
 - Use MySQL for persistent storage. It is your responsibility to design and model your own database. Keep it simple. An empty script, `create_events.sql`, is included for you to use.
-- The event system only needs to support a single event type, ‘Order.Created’, however it should be built in a way that adding new events types in the future is trivial for the development team.
+- The event system only needs to support a single event type, ‘Order.Created’, however it should be built in a way that adding new event types in the future is trivial for the development team.
 - For the scope of this problem, the server does not need to send an email. When the ‘Order.Created’ event is processed, it should output the string *"Sending receipt to {$email_address} for order #{$order_id}..."*
 
 # Getting Started
